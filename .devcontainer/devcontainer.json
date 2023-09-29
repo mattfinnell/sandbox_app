@@ -26,27 +26,37 @@
 			], 
 			"settings": {
 				"editor.formatOnSave": true,
-				"editor.defaultFormatter": "ms-python.black-formatter", 
 				"editor.codeActionsOnSave": {
 					"source.organizeImports": true
 				},
-				"python.languageServer": "Pylance",
-				"python.defaultInterpreterPath": "/home/vscode/.local/share/virtualenvs/fullstack-evT2JF2-/bin/python",
-				"python.analysis.autoImportCompletions": true,
-				"python.analysis.inlayHints.functionReturnTypes": false,
-				"python.analysis.inlayHints.variableTypes": true, 
-				"python.analysis.typeCheckingMode": "basic",
-				"python.analysis.diagnosticMode": "openFilesOnly",
-				"python.analysis.packageIndexDepths": [
-					{
-						"name": "django",
-						"depth": 2
-					},
-					{
-						"name": "djangorestframework",
-						"depth": 2
-					}
-				],
+				"[typescript]": {
+					"editor.tabSize": 2,
+					"editor.defaultFormatter": "esbenp.prettier-vscode",
+				},
+				"[typescriptreact]": {
+					"editor.tabSize": 2,
+					"editor.defaultFormatter": "esbenp.prettier-vscode",
+				},
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter", 
+					"python.languageServer": "Pylance",
+					"python.defaultInterpreterPath": "/home/vscode/.local/share/virtualenvs/fullstack-evT2JF2-/bin/python",
+					"python.analysis.autoImportCompletions": true,
+					"python.analysis.inlayHints.functionReturnTypes": false,
+					"python.analysis.inlayHints.variableTypes": true, 
+					"python.analysis.typeCheckingMode": "basic",
+					"python.analysis.diagnosticMode": "openFilesOnly",
+					"python.analysis.packageIndexDepths": [
+						{
+							"name": "django",
+							"depth": 2
+						},
+						{
+							"name": "djangorestframework",
+							"depth": 2
+						}
+					]
+				},
 				"indentRainbow.indicatorStyle": "light",
 				"indentRainbow.lightIndicatorStyleLineWidth": 1,
 				"indentRainbow.colors": [
