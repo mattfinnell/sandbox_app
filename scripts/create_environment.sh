@@ -1,6 +1,11 @@
+export ROOT_DIR="/workspaces/sandbox"
+export BACKEND_DIR="$ROOT_DIR/backend"
+export FRONTEND_DIR="$ROOT_DIR/frontend"
+export OUT_DIR="$ROOT_DIR/.out"
+
 # create the out directory
-if [ ! -d "$PWD/.out" ]; then
-  mkdir "$PWD/.out"
+if [ ! -d $OUT_DIR ]; then
+  mkdir $OUT_DIR
 fi
 
 # Postgres
@@ -18,8 +23,10 @@ psql -U postgres -f scripts/postgres.init.sql
 sudo apt install redis-server -y
 
 # initialize Django
+cd $BACKEND_DIR
 poetry install
 poetry run python manage.py makemigrations 
 poetry run python manage.py migrate
+cd $ROOT_DIR
 
 bash scripts/generate_github_key.sh 
