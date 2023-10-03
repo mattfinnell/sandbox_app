@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Fullstack DevContainer",
+	"name": "Sandbox",
 	"image": "mcr.microsoft.com/devcontainers/python:3.10-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -9,9 +9,10 @@
 		"ghcr.io/devcontainers-contrib/features/postgres-asdf:1": {},
 		"ghcr.io/devcontainers-contrib/features/black:2": {},
 		"ghcr.io/devcontainers-contrib/features/coverage-py:2": {},
-		"ghcr.io/devcontainers-contrib/features/pipenv:2": {},
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
-		"ghcr.io/devcontainers-contrib/features/typescript:2": {}
+		"ghcr.io/devcontainers-contrib/features/typescript:2": {},
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
 	},
 	"customizations": {
 		"vscode": {
@@ -22,7 +23,8 @@
 				"esbenp.prettier-vscode",
 				"ckolkman.vscode-postgres",
 				"oderwat.indent-rainbow",
-				"aaron-bond.better-comments"
+				"aaron-bond.better-comments",
+				"amazonwebservices.aws-toolkit-vscode"
 			], 
 			"settings": {
 				"editor.formatOnSave": true,
@@ -40,7 +42,7 @@
 				"[python]": {
 					"editor.defaultFormatter": "ms-python.black-formatter", 
 					"python.languageServer": "Pylance",
-					"python.defaultInterpreterPath": "/home/vscode/.local/share/virtualenvs/fullstack-evT2JF2-/bin/python",
+					"python.defaultInterpreterPath": "/home/vscode/.cache/pypoetry/virtualenvs/sandbox-a4RUCu-h-py3.10/bin/python",
 					"python.analysis.autoImportCompletions": true,
 					"python.analysis.inlayHints.functionReturnTypes": false,
 					"python.analysis.inlayHints.variableTypes": true, 
