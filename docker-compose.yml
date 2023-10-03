@@ -20,8 +20,6 @@ services:
     container_name: sandbox_backend 
     volumes:
       - .:/code
-    ports:
-      - 8000:8000
     expose: [8000]
     environment:
       - POSTGRES_DATABASE_NAME=sandbox

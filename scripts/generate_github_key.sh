@@ -1,6 +1,7 @@
 cd $ROOT_DIR
 git config --global user.email "mattfinnell104@gmail.com"
 git config --global user.name "Matt Finnell"
+git remote add origin git@github.com:mattfinnell/sandbox_app.git
 
 ssh-keygen -t ed25519 -C "mattfinnell104@gmail.com" 
 eval "$(ssh-agent -s)"
