@@ -1,7 +1,8 @@
 import axios from "axios";
 import { ThingType } from "./Thing";
+import { getConfig } from "./config";
 
-const api = axios.create({ baseURL: "http://localhost:8000/api/examples" });
+const api = axios.create({ baseURL: `${getConfig().apiURL}/api/examples` });
 
 export const createThing = (newThing: { name: string; description: string }) =>
   api.post("/", newThing).then((res) => res.data);

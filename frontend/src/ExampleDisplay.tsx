@@ -24,9 +24,9 @@ const ExampleDisplay: FC<ExampleDisplayProps> = () => {
   const [description, setDescription] = useState<string>("");
 
   return (
-    <VStack align="">
+    <VStack>
       <Heading>Things</Heading>
-      {status === "loading" && <Spinner size="lg" />}
+      {status === "loading" && <Spinner boxSize={50} />}
       {status === "error" && <Heading>{"Some Error Happened ='("}</Heading>}
       {status === "success" &&
         data.map((thing: ThingType) => (
