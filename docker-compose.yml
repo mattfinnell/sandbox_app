@@ -1,0 +1,47 @@
+version: '3.8'
+
+services: 
+  frontend:
+    build: 
+      context: /workspaces/sandbox
+      dockerfile: Dockerfile
+      target: frontend
+    container_name: sandbox_frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+  backend:
+    build: 
+      context: /workspaces/sandbox
+      dockerfile: Dockerfile
+      target: backend
+    container_name: sandbox_backend 
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    expose: [8000]
+    environment:
+      - POSTGRES_DATABASE_NAME=sandbox
+      - POSTGRES_DATABASE_USER=postgres
+      - POSTGRES_DATABASE_PASSWORD=postgres
+      - POSTGRES_DATABASE_HOST=db
+      - POSTGRES_DATABASE_PORT=5432
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    container_name: postgres_database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=sandbox
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+volumes:
+  postgres_data:

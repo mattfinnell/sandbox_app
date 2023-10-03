@@ -1,3 +1,4 @@
+cd $ROOT_DIR
 git config --global user.email "mattfinnell104@gmail.com"
 git config --global user.name "Matt Finnell"
 
